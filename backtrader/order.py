@@ -60,11 +60,11 @@ class OrderExecutionBit(object):
     '''
 
     def __init__(self,
-                 dt=None, size=0, price=0.0,
+                 dt=None, size=0.0, price=0.0,
                  closed=0, closedvalue=0.0, closedcomm=0.0,
                  opened=0, openedvalue=0.0, openedcomm=0.0,
                  pnl=0.0,
-                 psize=0, pprice=0.0):
+                 psize=0.0, pprice=0.0):
 
         self.dt = dt
         self.size = size
@@ -127,7 +127,7 @@ class OrderData(object):
     # the len of the exbits can be queried with no concerns about another
     # thread making an append and with no need for a lock
 
-    def __init__(self, dt=None, size=0, price=0.0, pricelimit=0.0, remsize=0,
+    def __init__(self, dt=None, size=0.0, price=0.0, pricelimit=0.0, remsize=0.0,
                  pclose=0.0, trailamount=0.0, trailpercent=0.0):
 
         self.pclose = pclose
@@ -157,8 +157,8 @@ class OrderData(object):
         self.margin = None
         self.pnl = 0.0
 
-        self.psize = 0
-        self.pprice = 0
+        self.psize = 0.0
+        self.pprice = 0.0
 
     def _getplimit(self):
         return self._plimit
@@ -178,7 +178,7 @@ class OrderData(object):
             closed=0, closedvalue=0.0, closedcomm=0.0,
             opened=0, openedvalue=0.0, openedcomm=0.0,
             pnl=0.0,
-            psize=0, pprice=0.0):
+            psize=0.0, pprice=0.0):
 
         self.addbit(
             OrderExecutionBit(dt, size, price,
